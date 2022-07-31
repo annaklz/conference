@@ -6,6 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "conferenceAttendees")
@@ -115,6 +116,36 @@ public class RegisteredAttendeeEntity {
         this.regtime = regtime;
     }
 
+    public RegisteredAttendeeEntity(Long id, String firstName, String lastName, String affiliation, String city, String country, String email, Date regtime, Date updatetime) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.affiliation = affiliation;
+        this.city = city;
+        this.country = country;
+        this.email = email;
+        this.regtime = regtime;
+        this.updatetime = updatetime;
+    }
 
+    public RegisteredAttendeeEntity(String firstName, String lastName, String affiliation, String city, String country, String email, Date regtime, Date updatetime) {
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.affiliation = affiliation;
+        this.city = city;
+        this.country = country;
+        this.email = email;
+        this.regtime = regtime;
+        this.updatetime = updatetime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RegisteredAttendeeEntity that = (RegisteredAttendeeEntity) o;
+        return id.equals(that.id) && firstName.equals(that.firstName) && lastName.equals(that.lastName) && Objects.equals(affiliation, that.affiliation) && city.equals(that.city) && country.equals(that.country) && email.equals(that.email) && regtime.equals(that.regtime) && updatetime.equals(that.updatetime);
+    }
 
 }
