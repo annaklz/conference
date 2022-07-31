@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE"></title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/uikit.min.css}">
+
+</head>
+<body>
+<!-- Main Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark py-2" style="background-color: #72688f">
+    <a class="navbar-brand" th:href="@{/main}">CONFERENCE WEBSITE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/fees}">
+                    <button type="button" class="btn btn-outline-light">Fees</button>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/programme}">
+                    <button type="button" class="btn btn-outline-light">Programme</button>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/venue}">
+                    <button type="button" class="btn btn-outline-light">Venue</button>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/admin}">
+                    <button type="button" class="btn btn-info">
+                        Admin
+                    </button>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/register}">
+                    <button type="button" class="btn btn-warning">
+                        Register now!
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Content Section -->
+<section layout:fragment="content">
+    <p>This is filled by the content template.</p>
+</section>
+
+<!-- Footer -->
+<footer class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="text-muted">&copy; 2022 WSZIB - Final project. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

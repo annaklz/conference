@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title th:text="${title}"></title>
+</head>
+<body>
+<div layout:fragment="content">
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 th:text="${title}"></h1>
+                    <table class="table">
+                        <thead>
+                        <tr class="table-active">
+                            <th scope="col">#</th>
+                            <th scope="col">Attendee</th>
+                            <th scope="col">Early Bird Registration before August 1st</th>
+                            <th scope="col">Standard Registration after August 1st</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="table-light">
+                            <th scope="row">1</th>
+                            <td>Industry</td>
+                            <td>900 EUR</td>
+                            <td>1200 EUR</td>
+                        </tr>
+                        <tr class="table-light">
+                            <th scope="row">2</th>
+                            <td>Academic</td>
+                            <td>600 EUR</td>
+                            <td>800 EUR</td>
+                        </tr>
+                        <tr class="table-light">
+                            <th scope="row">3</th>
+                            <td>Student</td>
+                            <td>300 EUR</td>
+                            <td>400 EUR</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <b>* The conference registration fee</b> includes admission to the scientific sessions, conference materials, lunches and coffee breaks. The conference registration fee does not include accommodation.
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

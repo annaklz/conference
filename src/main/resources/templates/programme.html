@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title th:text="${title}"></title>
+</head>
+<body>
+<div layout:fragment="content">
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 th:text="${title}"></h1>
+                    <table class="table">
+                        <thead>
+                        <tr class="table-active">
+                            <th scope="col">Time</th>
+                            <th scope="col">Monday 15th August</th>
+                            <th scope="col">Tuesday 16th August</th>
+                            <th scope="col">Wednesday 17th August</th>
+                            <th scope="col">Thursday 18th August</th>
+                            <th scope="col">Friday 19th August</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="table-light">
+                            <th scope="row">7:30 - 8:00</th>
+                            <td>Breakfast</td>
+                            <td>Breakfast</td>
+                            <td>Breakfast</td>
+                            <td>Breakfast</td>
+                            <td>Breakfast</td>
+                        </tr>
+                        <tr class="table-info">
+                            <th scope="row">8:00 - 10:00</th>
+                            <td>Morning lecture</td>
+                            <td>Morning lecture</td>
+                            <td>Morning lecture</td>
+                            <td>Morning lecture</td>
+                            <td>Morning lecture</td>
+                        </tr>
+                        <tr class="table-light">
+                            <th scope="row">10:00 - 10:30</th>
+                            <td>Coffee break</td>
+                            <td>Coffee break</td>
+                            <td>Coffee break</td>
+                            <td>Coffee break</td>
+                            <td>Coffee break</td>
+                        </tr>
+                        <tr class="table-info">
+                            <th scope="row">10:30 - 12:30</th>
+                            <td>Lecture</td>
+                            <td>Lecture</td>
+                            <td>Lecture</td>
+                            <td>Lecture</td>
+                            <td>Lecture</td>
+                        </tr>
+                        <tr class="table-light">
+                            <th scope="row">12:30 - 13:30</th>
+                            <td>Lunch break</td>
+                            <td>Lunch break</td>
+                            <td>Lunch break</td>
+                            <td>Lunch break</td>
+                            <td>Lunch break</td>
+                        </tr>
+                        <tr class="table-info">
+                            <th scope="row">13:30 - 15:30</th>
+                            <td>Lecture</td>
+                            <td>Lecture</td>
+                            <td>Lecture</td>
+                            <td>Lecture</td>
+                            <td>Lecture</td>
+                        </tr>
+                        <tr class="table-light">
+                            <th scope="row">15:30 - 16:00</th>
+                            <td>Coffee break</td>
+                            <td>Coffee break</td>
+                            <td>Coffee break</td>
+                            <td>Coffee break</td>
+                            <td>Departure</td>
+                        </tr>
+                        <tr class="table-info">
+                            <th scope="row">16:00 - 18:00</th>
+                            <td>Lecture</td>
+                            <td>Lecture</td>
+                            <td>Lecture</td>
+                            <td>Lecture</td>
+                            <td></td>
+                        </tr>
+                        <tr class="table-light">
+                            <th scope="row">19:00 - 21:00</th>
+                            <td>Social Event</td>
+                            <td>Dinner</td>
+                            <td>Conference Dinner</td>
+                            <td>Dinner</td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

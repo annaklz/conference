@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title th:text="${title}"></title>
+</head>
+<body>
+<div layout:fragment="content">
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <h1 th:text="${title}"></h1>
+                    <h3>Conference location</h3>
+                    <p class="text-justify">ICE Krakow Congress Centre <br>
+                        Marii Konopnickiej 17<br> 30-302 Kraków, POLAND</p>
+                    <h3>How to get to the conference venue?</h3>
+                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
+                        dignissimos ea laborum natus temporibus. Aliquam architecto blanditiis consequatur culpa cum
+                        cupiditate, debitis dignissimos dolore doloribus dolorum eaque eos excepturi explicabo, harum
+                        incidunt iste labore maxime mollitia nam natus necessitatibus nemo nesciunt nihil nisi obcaecati
+                        officia officiis perferendis quae quis, quod reiciendis repellat rerum sapiente sequi sit sunt
+                        tenetur. </p>
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe width="950" height="500" id="gmap_canvas"
+                                    src="https://maps.google.com/maps?q=ICE%20krak%C3%B3w&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <a href="https://fmovies-online.net">fmovies</a><br>
+                            <style>.mapouter {
+                                position: relative;
+                                text-align: right;
+                                height: 500px;
+                                width: 950px;
+                            }</style>
+                            <a href="https://www.embedgooglemap.net">google map on your website</a>
+                            <style>.gmap_canvas {
+                                overflow: hidden;
+                                background: none !important;
+                                height: 500px;
+                                width: 950px;
+                            }</style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
