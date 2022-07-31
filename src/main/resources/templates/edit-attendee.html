@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title th:text="${title}"></title>
+</head>
+<body>
+<div layout:fragment="content">
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 th:text="${title}"></h1>
+
+                    <form th:method="POST" th:action="@{/edit(id=${editAttendee.id})}" th:object="${editAttendee}"
+                          enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="id">Id</label>
+                            <input id="id" class="form-control" type="text" th:field="*{id}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input id="firstName" class="form-control" type="text" th:field="*{firstName}">
+                            <span th:if="${#fields.hasErrors('firstName')}" class="uk-text-small uk-text-danger">
+                    Error message! This field must contain 3 - 30 characters!                                </span>
+
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input id="lastName" class="form-control" type="text" th:field="*{lastName}">
+                            <span th:if="${#fields.hasErrors('lastName')}" class="uk-text-small uk-text-danger">
+Error message! This field must contain 3 - 30 characters!                         </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="affiliation">Affiliation</label>
+                            <input id="affiliation" class="form-control" type="text" th:field="*{affiliation}">
+                            <span th:if="${#fields.hasErrors('affiliation')}" class="uk-text-small uk-text-danger">
+Error message! This field must contain 3 - 30 characters!              </span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input id="city" class="form-control" type="text" th:field="*{city}">
+                            <span th:if="${#fields.hasErrors('city')}" class="uk-text-small uk-text-danger">
+Error message! This field must contain 3 - 30 characters!                                 </span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input id="country" class="form-control" type="text" th:field="*{country}">
+                            <span th:if="${#fields.hasErrors('country')}"
+                                  class="uk-text-small uk-text-danger">
+Error message! This field must contain 3 - 30 characters!                </span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input id="email" class="form-control" type="text" th:field="*{email}">
+                            <span th:if="${#fields.hasErrors('email')}" class="uk-text-small uk-text-danger">
+Error message! This field must contain 3 - 30 characters!                                </span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" class="form-control btn btn-warning" value="Edit"
+                                   th:href="@{/completed}"></div>
+                        <div class="form-group">
+
+                            <input onclick='javascript:window.history.back()' value='Cancel' type='button'
+                                   class="form-control btn btn-info"/>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

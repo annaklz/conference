@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title th:text="${title}"></title>
+</head>
+<body>
+<div layout:fragment="content">
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 th:text="${title}"></h1>
+                    <table class="table">
+                        <thead>
+                        <tr class="table-active">
+                            <th scope="col">#</th>
+                            <th scope="col">Attendee, Affiliation</th>
+                            <th scope="col">City, Country</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Registration / Last update</th>
+                            <th scope="col">Delete</th>
+                            <th scope="col">Edit</th>
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr th:each="attendee : ${attendees}">
+                            <th scope="row" th:text="${attendee.id}"></th>
+                            <td th:text="${attendee.firstName} + ' ' + ${attendee.lastName} + ', ' + ${attendee.affiliation}"></td>
+                            <td th:text="${attendee.city} + ', ' + ${attendee.country}"></td>
+                            <td th:text="${attendee.email}"></td>
+                            <td th:text="${#dates.format(attendee.regtime, 'dd-MM-yyyy')} + ' / ' + ${#dates.format(attendee.updatetime, 'dd-MM-yyyy')}"></td>
+                            <td>
+                                <form action="#" th:action="@{'/{id}'(id=${attendee.id})}" th:method="delete">
+                                    <input type="hidden" name="_method" value="delete"/>
+                                    <input type="submit" class="btn btn-outline-danger" value="Delete">
+                                </form>
+                            </td>
+                            <td><a class="btn btn-warning" th:href="@{/edit(id=${attendee.id})}">Edit</a>
+
+                            </td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
