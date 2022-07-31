@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title th:text="${title}"></title>
+</head>
+<body>
+<div layout:fragment="content">
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 th:text="${title}"></h1>
+
+                    <form th:method="POST" th:object="${newAttendee}" enctype="multipart/form-data"
+                          th:href="@{/register}">
+                        <div class="uk-width-1-1">
+                            <input class="uk-input" type="text" placeholder="First Name" th:field="*{firstName}"
+                                   th:errorclass="uk-form-danger">
+                            <span th:if="${#fields.hasErrors('firstName')}" class="uk-text-small uk-text-danger">
+                    Error message! This field must contain 3 - 30 characters!                                </span>
+
+                            </span>
+                            <p>
+                            <div class="uk-width-1-1">
+                                <input class="uk-input" type="text" placeholder="Last Name" th:field="*{lastName}"
+                                       th:errorclass="uk-form-danger">
+                                <span th:if="${#fields.hasErrors('lastName')}" class="uk-text-small uk-text-danger">
+Error message! This field must contain 3 - 30 characters!                         </span>
+                                <p>
+                            </div>
+                        </div>
+                        <div class="uk-width-1-1">
+                            <input class="uk-input" type="text" placeholder="Affiliation" th:field="*{affiliation}"
+                                   th:errorclass="uk-form-danger">
+                            <span th:if="${#fields.hasErrors('affiliation')}" class="uk-text-small uk-text-danger">
+Error message! This field must contain 3 - 30 characters!              </span>
+                            <p>
+                        </div>
+                        <div class="uk-width-1-1">
+                            <input class="uk-input" type="text" placeholder="City" th:field="*{city}"
+                                   th:errorclass="uk-form-danger">
+                            <span th:if="${#fields.hasErrors('city')}" class="uk-text-small uk-text-danger">
+Error message! This field must contain 3 - 30 characters!                                 </span>
+                            <p>
+                        </div>
+                        <div class="uk-width-1-1">
+                            <input class="uk-input" type="text" placeholder="Country" th:field="*{country}"
+                                   th:errorclass="uk-form-danger">
+                            <span th:if="${#fields.hasErrors('country')}"
+                                  class="uk-text-small uk-text-danger">
+Error message! This field must contain 3 - 30 characters!                </span>
+                            <p>
+                        </div>
+
+                        <div class="uk-width-1-1">
+                            <input class="uk-input" type="text" placeholder="E-mail" th:field="*{email}"
+                                   th:errorclass="uk-form-danger">
+                            <span th:if="${#fields.hasErrors('email')}" class="uk-text-small uk-text-danger">
+Error message! This field must contain 3 - 30 characters!                                </span>
+                            <p>
+                        </div>
+
+                        <div class="uk-width-1-1">
+                            <input type="submit" class="btn btn-warning uk-width-1-1" value="Register"
+                                   th:href="@{/completed}">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
