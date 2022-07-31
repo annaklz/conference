@@ -13,8 +13,9 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>conference</name>
     <description>conference</description>
+    <packaging>jar</packaging>
     <properties>
-        <java.version>11</java.version>
+        <java.version>8</java.version>
     </properties>
     <dependencies>
         <dependency>
