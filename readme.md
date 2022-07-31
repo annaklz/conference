@@ -9,6 +9,7 @@
 - Admin może przeglądać listę zarejestrowanych osób, edytować dane i usuwać uczestników (dodatkowo zapisywana jest data aktualizacji danych danego uczestnika)
 
 Aplikacja dostępna jest na serwerze Heroku pod adresem:
+jwd-conference.herokuapp.com
 
 
 ### Strona główna
